@@ -64,6 +64,9 @@ h2.post-title {
     color:#ccc;
 }
 
-.tags li{
-    color: #3D9970;
+img {
+    vertical-align: middle;
+    border-style: none;
+    width: 100%;
+    height: auto;
 }

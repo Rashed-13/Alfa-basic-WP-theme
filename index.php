@@ -32,18 +32,17 @@
                             <div class="col-md-4">
                                 <p>
                                     <strong><?php the_author();?></strong><br/>
-                                    15th May, 2018
+                                    <?php the_date() ?>
                                 </p>
                                 <ul class="list-unstyled">
                                     <li>dhaka</li>
                                 </ul>
                             </div>
                             <div class="col-md-8">
-                                    <img class="img-fluid" src="https://images.pexels.com/photos/301929/pexels-photo-301929.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=800"
-                                    alt="Post Title">
-                                <p>
-                                    <?php the_content();?>
-                                </p>
+                                <?php if(has_post_thumbnail()){
+                                    the_post_thumbnail("large", "class='img-fluid'");
+                                } ?>
+                                <p><?php the_excerpt();?></p>
                             </div>
                         </div>
                     </div>
@@ -52,6 +51,8 @@
         }
     }
 ?>
+                  <!-- <img class="img-fluid" src="https://images.pexels.com/photos/301929/pexels-photo-301929.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=800"
+                                    alt="Post Title"> -->
 
 
 
