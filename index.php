@@ -24,14 +24,16 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
-                                <h2 class="post-title"><?php the_title() ;?></h2>
+                                <h2 class="post-title">
+                                    <a href="<?php the_permalink()?>"><?php the_title() ;?></a>
+                                </h2>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-4">
                                 <p>
                                     <strong><?php the_author();?></strong><br/>
-                                    <?php the_date() ?>
+                                    <?php echo get_the_date() ?>
                                 </p>
                                 <?php 
                                     echo get_the_tag_list("<ul class=\"list-unstyled\"><li>","</li><li>","</li></ul>");
@@ -41,7 +43,15 @@
                                 <?php if(has_post_thumbnail()){
                                     the_post_thumbnail("large", "class='img-fluid'");
                                 } ?>
-                                <p><?php the_excerpt();?></p>
+                                <p>
+                                    <?php 
+                                        if(is_single()){
+                                            the_content();
+                                        }else{
+                                            the_excerpt();
+                                        }
+                                    ?>
+                                </p>
                             </div>
                         </div>
                     </div>
