@@ -16,7 +16,6 @@
     </div>
 </div>
 <div class="posts">
-   
 <?php
     if(have_posts()){
         while(have_posts()){
@@ -34,9 +33,9 @@
                                     <strong><?php the_author();?></strong><br/>
                                     <?php the_date() ?>
                                 </p>
-                                <ul class="list-unstyled">
-                                    <li>dhaka</li>
-                                </ul>
+                                <?php 
+                                    echo get_the_tag_list("<ul class=\"list-unstyled\"><li>","</li><li>","</li></ul>");
+                                ?>
                             </div>
                             <div class="col-md-8">
                                 <?php if(has_post_thumbnail()){
@@ -51,13 +50,17 @@
         }
     }
 ?>
-                  <!-- <img class="img-fluid" src="https://images.pexels.com/photos/301929/pexels-photo-301929.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=800"
-                                    alt="Post Title"> -->
+</div>
 
-
-
-
-
+<div class="container">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-8">
+            <?php 
+               the_posts_pagination( array( 'mid_size' => 3 ) );
+            ?>
+        </div>
+    </div>
 </div>
 <div class="footer">
     <div class="container">
