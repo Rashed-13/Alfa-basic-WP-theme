@@ -1,20 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <?php wp_head();?>
-</head>
+<?php get_header();?>
 <body <?php body_class();?>>
-<div class="header">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10 offset-md-1">
-                <h3 class="tagline"><?php bloginfo("description");?></h3>
-                <h1 class="align-self-center display-1 text-center heading"><?php bloginfo('name');?></h1>
-            </div>
-        </div>
-    </div>
-</div>
+<?php get_template_part("hero");?>
 <div class="posts">
     <div class="post" <?php post_class();?>>
         <div class="container">
@@ -72,15 +58,4 @@
         </div>
     </div>
 </div>
-<div class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                &copy; LWHH - All Rights Reserved
-            </div>
-        </div>
-    </div>
-</div>
-<?php wp_footer();?>
-</body>
-</html>
+<?php get_footer();?>
