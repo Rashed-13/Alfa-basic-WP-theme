@@ -70,3 +70,7 @@ img {
     width: 100%;
     height: auto;
 }
+li.menu-item {
+    list-style: none;
+    display: inline-block;
+}

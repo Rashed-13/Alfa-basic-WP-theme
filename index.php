@@ -31,6 +31,11 @@
                                 } ?>
                                 <p>
                                     <?php 
+                                        // if(post_password_required()){
+                                        //     echo "This post is password required";
+                                        // }else{
+                                        //     the_excerpt();
+                                        // }
                                         the_excerpt();
                                     ?>
                                 </p>
@@ -55,3 +60,4 @@
     </div>
 </div>
 <?php get_footer();?>
+
