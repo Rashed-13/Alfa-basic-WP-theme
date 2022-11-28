@@ -1,4 +1,9 @@
 <?php 
+if(site_url() == "http://localhost/alfa"){
+    define("VERSION", time());
+}else{
+    define("VERSION", wp_get_theme()->version);
+}
 
 function alfa_bootstrappig(){
     load_theme_textdomain("alfa");
@@ -13,14 +18,16 @@ function alfa_bootstrappig(){
         "footermenu" => __("Footer menu", 'alfa')
     ));
 }
+
 add_action("after_setup_theme", "alfa_bootstrappig");
 
 function alfa_assets(){
     wp_enqueue_style("bootstrap", "//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css");
-    wp_enqueue_style("alfa", get_stylesheet_uri(), null, "8.1.2" , null);
+    wp_enqueue_style("alfa", get_stylesheet_uri(), null, VERSION, "all");
     wp_enqueue_style("fatherlight-css", "//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css");
 
     wp_enqueue_script("fatherlight-js", "//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.js", array("jquery"), "1.1.0", true);
+    wp_enqueue_script("main-js", get_template_directory_uri()."/assats/js/app.js", null, VERSION, true);
 }
 add_action("wp_enqueue_scripts", "alfa_assets");
 
@@ -85,7 +92,10 @@ function alfa_adding_css_class_to_li($classes){
 add_filter("nav_menu_css_class", "alfa_adding_css_class_to_li", 10, 1);
 
 
-get_the_post_thumbnail_url()
+function remove_max_srcset_image_width(  ) {
+    return 1;
+}
+add_filter( 'max_srcset_image_width', 'remove_max_srcset_image_width' );
 
 
 
