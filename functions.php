@@ -18,6 +18,9 @@ add_action("after_setup_theme", "alfa_bootstrappig");
 function alfa_assets(){
     wp_enqueue_style("bootstrap", "//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css");
     wp_enqueue_style("alfa", get_stylesheet_uri(), null, "8.1.2" , null);
+    wp_enqueue_style("fatherlight-css", "//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css");
+
+    wp_enqueue_script("fatherlight-js", "//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.js", array("jquery"), "1.1.0", true);
 }
 add_action("wp_enqueue_scripts", "alfa_assets");
 
@@ -75,6 +78,14 @@ function alfa_protected_title_format_modification(){
 }
 add_filter("protected_title_format", "alfa_protected_title_format_modification");
 
+function alfa_adding_css_class_to_li($classes){
+    $classes[] = "Rashed";
+    return $classes;
+}
+add_filter("nav_menu_css_class", "alfa_adding_css_class_to_li", 10, 1);
+
+
+get_the_post_thumbnail_url()
 
 
 

@@ -26,7 +26,12 @@
                             </div>
                             <div class="col-md-12">
                                 <?php if(has_post_thumbnail()){
+                                    $image_url = get_the_post_thumbnail_url(null, "large");
+
+                                    echo '<a href="#" data-featherlight="'.$image_url.'">';
                                     the_post_thumbnail("large", "class='img-fluid'");
+                                    
+                                    echo '</a>';
                                 } ?>
                                 <p>
                                     <?php 
