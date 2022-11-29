@@ -91,15 +91,26 @@ function alfa_adding_css_class_to_li($classes){
 }
 add_filter("nav_menu_css_class", "alfa_adding_css_class_to_li", 10, 1);
 
-
 function remove_max_srcset_image_width(  ) {
     return 1;
 }
 add_filter( 'max_srcset_image_width', 'remove_max_srcset_image_width' );
 
-
-
-
+function alfa_add_custom_css_block_in_head(){
+    ?>
+        <style>
+            h1.heading a{
+                color: red;
+            }
+        </style>
+    <?php
+    //or
+    // echo "<style>
+    //         h1.heading a{
+    //         color: red;}
+    //     </style>";
+}
+add_action("wp_head", "alfa_add_custom_css_block_in_head", 11);
 
 
 
