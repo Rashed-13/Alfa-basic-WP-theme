@@ -20,7 +20,6 @@ h1.heading {
     margin: auto;
     margin-bottom: 70px;
     padding-bottom: 50px;
-    border-bottom: 1px solid #ccc;
 }
 
 h3.tagline{
@@ -73,4 +72,19 @@ img {
 li.menu-item {
     list-style: none;
     display: inline-block;
+}
+
+.page-header{
+    background-position: center;
+    background-size: cover;
+    margin-bottom:30px;
+    padding:170px 0px;
+}
+
+.full-width-page-title{
+    color: #000;
+    
+}
+.full-width-page-title:hover{
+    text-decoration: none;
 }

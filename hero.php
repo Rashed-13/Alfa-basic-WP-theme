@@ -14,7 +14,6 @@
                     wp_nav_menu(array(
                         'theme_location' => 'headermenu',
                         "container" => "div",
-
                     ));
                 ?>
             </div>
