@@ -11,7 +11,7 @@ function alfa_bootstrappig() {
     add_theme_support("post-thumbnails");
 
     $defaults = array(
-        'default-text-color' => '#ddd',
+        'default-text-color' => '#2e00d8',
         'header-text' => true,
     );
     add_theme_support("custom-header", $defaults);
@@ -112,8 +112,30 @@ function alfa_add_custom_css_block_in_head() {
             </style>
         <?php
     }
+    if(is_front_page()){
+        if(current_theme_supports("custom-header")){
+            ?>
+            <style>
+                .header{
+                    background-image: url(<?php echo header_image();?>);
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    margin-bottom: 50px;
+                }
+                .header h1.heading a, h3.tagline{
+                    color: #<?php echo get_header_textcolor()?>;
+                    <?php
+                    if( ! display_header_text()){
+                    echo "display: none";
+                    }
+                    ?>
+                }
+            </style>
+        <?php
+        }
+    }
 
-//or
+    //or
     // echo "<style>
     //         h1.heading a{
     //         color: red;}
