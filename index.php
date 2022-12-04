@@ -13,6 +13,17 @@
                                 <h2 class="post-title">
                                     <a href="<?php the_permalink()?>"><?php the_title() ;?></a>
                                 </h2>
+                                <?php 
+                                        $alfa_post_formate = get_post_format();
+                                        // echo $alfa_post_formate;
+                                        if("image" == $alfa_post_formate){
+                                            echo '<span class="dashicons dashicons-format-image"></span>';
+                                        }elseif("gallery" == $alfa_post_formate){
+                                            echo '<span class="dashicons dashicons-format-gallery"></span>';
+                                        }elseif("audio" == $alfa_post_formate){
+                                            echo '<span class="dashicons dashicons-format-audio"></span>';
+                                        }
+                                    ?>
                             </div>
                         </div>
                         <div class="row">

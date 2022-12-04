@@ -95,3 +95,8 @@ li.menu-item {
     border-radius: 50%;
     margin-top: 50px;
 }
+
+.dashicons{
+    color: #ccc;
+    font-size: 30px;
+}

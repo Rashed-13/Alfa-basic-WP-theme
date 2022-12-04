@@ -5,6 +5,10 @@ if (site_url() == "http://localhost/alfa") {
     define("VERSION", wp_get_theme()->version);
 }
 
+// $alfa_page_base_name = basename( get_page_template());
+// print_r($alfa_page_base_name);
+// die();
+
 function alfa_bootstrappig() {
     load_theme_textdomain("alfa");
     add_theme_support("title-tag");
@@ -21,6 +25,7 @@ function alfa_bootstrappig() {
     );
     add_theme_support("custom-logo", $alfa_default_logo_size);
     add_theme_support("custom-background");
+    add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat') );
 
     // register_nav_menu("headermenu", __("Top menu", 'alfa'));
     // register_nav_menu("footermenu", __("Footer menu", 'alfa'));
@@ -35,8 +40,9 @@ add_action("after_setup_theme", "alfa_bootstrappig");
 
 function alfa_assets() {
     wp_enqueue_style("bootstrap", "//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css");
-    wp_enqueue_style("alfa", get_stylesheet_uri(), null, VERSION, "all");
     wp_enqueue_style("fatherlight-css", "//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css");
+    wp_enqueue_style("dashicon");
+    wp_enqueue_style("alfa", get_stylesheet_uri(), null, VERSION, "all");
 
     wp_enqueue_script("fatherlight-js", "//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.js", array("jquery"), "1.1.0", true);
     wp_enqueue_script("main-js", get_template_directory_uri() . "/assats/js/app.js", null, VERSION, true);

@@ -38,44 +38,6 @@
                         } ?>
                         </p>
                         <div class="row">
-                            <div class="col-md-12">
-                                <?php 
-                                    wp_nav_menu(array(
-                                        'theme_location' => 'headermenu',
-                                        "container" => "div"
-                                    ));
-                                  ?>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <?php 
-                                    wp_nav_menu(array(
-                                        'theme_location' => 'headermenu',
-                                        "container" => "div"
-                                    ));
-                                  ?>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <?php 
-                                    wp_nav_menu(array(
-                                        'theme_location' => 'headermenu',
-                                        "container" => "div"
-                                    ));
-                                  ?>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <?php 
-                                    wp_nav_menu(array(
-                                        'theme_location' => 'headermenu',
-                                        "container" => "div"
-                                    ));
-                                  ?>
-                            </div>
                         </div>
                         <p><?php the_content();?></p>
                     </div>
