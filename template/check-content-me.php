@@ -1,0 +1,1 @@
+<h1>Hello, I am from content checking page</h1>
