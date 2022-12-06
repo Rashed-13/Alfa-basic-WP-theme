@@ -27,7 +27,7 @@
                             <div class="row">
                                 <div class="col-md-12 text-center">
                                     <p>
-                                        <strong><?php the_post(); the_author(); rewind_posts()?></strong><br />
+                                        <strong><?php the_post(); the_author_posts_link(); rewind_posts()?></strong><br />
                                         <?php echo get_the_date();?>
                                     </p>
                                     <?php 
