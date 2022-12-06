@@ -7,7 +7,7 @@ if (site_url() == "http://localhost/alfa") {
 
 // $alfa_page_base_name = basename( get_page_template());
 // print_r($alfa_page_base_name);
-// die();
+
 
 function alfa_bootstrappig() {
     load_theme_textdomain("alfa");
@@ -156,3 +156,8 @@ function alfa_add_custom_css_block_in_head() {
 add_action("wp_head", "alfa_add_custom_css_block_in_head", 11);
 
 
+function alfa_removing_class_from_body($classes){
+    unset($classes[array_search("rashed", $classes)]);
+    return $classes;
+}
+add_filter("body_class", "alfa_removing_class_from_body");

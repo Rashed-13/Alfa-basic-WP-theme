@@ -2,12 +2,13 @@
 <body <?php body_class("rashed");?>>
 <?php get_template_part("hero");?>
 <div class="posts">
+    <h2 class="text-center"> In Tags  <?php echo get_the_tag_list();?></h2>
 <?php
     if(have_posts()){
         while(have_posts()){
-            the_post();
-                get_template_part("post-format/content", get_post_format());
-        }
+            the_post();?>
+            <a href="<?php the_permalink();?>"><h2 class="text-center"><?php the_title();?></h2></a>
+        <?php }
     }
 ?>
 </div>

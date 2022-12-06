@@ -2,11 +2,12 @@
 <body <?php body_class("rashed");?>>
 <?php get_template_part("hero");?>
 <div class="posts">
+    <h2 class="text-center"> In Category  <?php echo get_the_category_list();?></h2>
 <?php
     if(have_posts()){
         while(have_posts()){
             the_post();
-                get_template_part("post-format/content", get_post_format());
+                the_title("<h2 class='text-center'>","</h2>");
         }
     }
 ?>
@@ -23,4 +24,3 @@
     </div>
 </div>
 <?php get_footer();?>
-

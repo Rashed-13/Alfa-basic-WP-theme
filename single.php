@@ -1,10 +1,19 @@
+<?php 
+    if(is_active_sidebar("sitebar1")){
+        $alfa_layout_width = "col-md-8";
+    }else{
+        $alfa_layout_width = "col-md-10 offset-md-1";
+    }
+?>
+
+
 <?php get_header();?>
 
 <body <?php body_class();?>>
     <?php get_template_part("hero");?>
     <div class="container">
         <div class="row">
-            <div class="col-md-8">
+            <div class="<?php echo $alfa_layout_width;?>">
                 <div class="posts">
                     <div class="post" <?php post_class();?>>
                         <div class="container">
@@ -42,6 +51,15 @@
                                     ?>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-md-6 offset-md-3">
+                                    <div class="author-section">
+                                        <div class="authore-name">
+                                            <h2 class="auth-heading">The author is <?php echo get_the_author_meta("nickname", 1);?></h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -68,13 +86,16 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <?php 
+            if(is_active_sidebar('sitebar1')){ ?>
+                <div class="col-md-4">
                 <?php 
                     if(is_active_sidebar("sitebar1")){
                         dynamic_sidebar("sitebar1");
                     }
                 ?>
             </div>
+            <?php } ?>
         </div>
     </div>
     <?php get_footer();?>
