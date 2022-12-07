@@ -5,8 +5,6 @@
         $alfa_layout_width = "col-md-10 offset-md-1";
     }
 ?>
-
-
 <?php get_header();?>
 
 <body <?php body_class();?>>
@@ -33,6 +31,23 @@
                                     <?php 
                                     echo get_the_tag_list("<ul class=\"list-unstyled\"><li>","</li><li>","</li></ul>");
                                 ?>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h2>Attachments</h2>
+                                        <div class="slider">
+                                        <?php 
+                                            if(class_exists("Attachments")){
+                                                $attachments = new Attachments("post_slider");
+                                                if( $attachments->exist() ) : 
+                                                    while( $attachment = $attachments->get() ) : 
+                                                    ?><div><?php echo $attachments->image( 'large' );?></div> <?php 
+                                                    endwhile; 
+                                                endif; 
+                                            }
+                                        ?>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col-md-12">
                                     <?php if(has_post_thumbnail()){
@@ -98,4 +113,7 @@
             <?php } ?>
         </div>
     </div>
+    <?php 
+        // print_r(get_declared_classes());
+    ;?>
     <?php get_footer();?>
