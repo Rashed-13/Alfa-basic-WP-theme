@@ -111,3 +111,8 @@ li.menu-item {
 h2.auth-heading{
     color: #fff;
 }
+
+.search-highlight{
+    background-color: chartreuse;
+    font-weight: bold;
+}

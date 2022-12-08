@@ -24,5 +24,13 @@
                 ?>
             </div>
         </div>
+        <div class="row alfa-search-form">
+            <div class="col-md-6">
+                <?php get_search_form( true );?>
+            </div>
+            <div class="col-md-6">
+                <h2><?php _e("You searched for: "); the_search_query()?></h2>
+            </div>
+        </div>
     </div>
 </div>

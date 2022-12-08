@@ -28,7 +28,7 @@ function alfa_bootstrappig() {
     add_theme_support("custom-logo", $alfa_default_logo_size);
     add_theme_support("custom-background");
     add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat') );
-
+    add_theme_support( 'html5', array( 'search-form' ) );
     // register_nav_menu("headermenu", __("Top menu", 'alfa'));
     // register_nav_menu("footermenu", __("Footer menu", 'alfa'));
 
@@ -165,3 +165,20 @@ function alfa_removing_class_from_body($classes){
     return $classes;
 }
 add_filter("body_class", "alfa_removing_class_from_body");
+
+
+
+function alfa_highlighiting_search_result($text){
+    if(is_search()){
+        $a = trim(get_search_query());
+        if(!empty($a)){
+            $pattern = '/('.join('|',explode(' ', $a)).')/i';
+            $text = preg_replace($pattern, '<span class="search-highlight">\0</span>', $text);
+        }
+    }
+    return $text;
+}
+
+add_filter('the_title', "alfa_highlighiting_search_result");
+add_filter('the_excerpt', "alfa_highlighiting_search_result");
+add_filter('the_content', "alfa_highlighiting_search_result");

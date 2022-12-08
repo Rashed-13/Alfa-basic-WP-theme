@@ -3,11 +3,11 @@
 <?php get_template_part("hero");?>
 <?php 
     if( is_search() && ! have_posts() ) :?>
-    <div class="row">
-    <div class="col-md-6 offset-md-3 text-center">
-        <h3><?php _e("No Result Found");?></h3>
-    </div>
-</div>
+        <div class="row">
+            <div class="col-md-6 offset-md-3 text-center">
+                <h3><?php _e("No Result Found");?></h3>
+            </div>
+        </div>
     <?php endif;
 ?>
 <div class="posts">
