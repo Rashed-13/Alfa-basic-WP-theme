@@ -1,14 +1,14 @@
 var slider = tns({
-    container: '.slider',
-    speed :1000,
+    container: '.my-slider',
+    controls:   false,
+    nav:        false,
+    autoplayButtonOutput:   false,
+    items:          1,
+    speed :     1400,
     autoplayTimeout : 2000,
-    // items: 1,
-    autoplay : true,
-    controls: false,
-    nav:false,
-    autoplayButtonOutput: false,
-    slideBy: "page",
-    mouseDrag: true,
+    autoplay :  true,
+    autoplayHoverPause: true,
+    // rewind: true,
     responsive: {
       640: {
         edgePadding: 20,
@@ -21,5 +21,7 @@ var slider = tns({
       900: {
         items: 1
       }
-    }
+    },
   });
+
+

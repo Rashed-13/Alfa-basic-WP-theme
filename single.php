@@ -35,7 +35,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <h2>Attachments</h2>
-                                        <div class="slider">
+                                        <div class="my-slider">
                                         <?php 
                                             if(class_exists("Attachments")){
                                                 $attachments = new Attachments("post_slider");
@@ -80,10 +80,9 @@
                 </div>
                 <div class="container">
                     <div class="row">
-                        <?php if(comments_open()):;?>
+                        <?php if( ! post_password_required()):;?>
                         <div class="col-md-12">
-                            <?php 
-                            comments_template()?>
+                            <?php comments_template();?>
                         </div>
                         <?php endif;?>
                     </div>

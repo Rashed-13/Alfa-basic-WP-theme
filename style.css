@@ -116,3 +116,13 @@ h2.auth-heading{
     background-color: chartreuse;
     font-weight: bold;
 }
+
+
+
+img.photo {
+    width: 50px;
+}
+
+li.comment {
+    list-style: none;
+}
