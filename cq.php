@@ -1,6 +1,6 @@
 <?php 
     /*
-    Template Name: Custom Query
+    Template Name: Custom Query WP_Post
     */
 ?>
 <?php get_header() ;?>

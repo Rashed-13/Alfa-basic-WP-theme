@@ -182,3 +182,18 @@ function alfa_highlighiting_search_result($text){
 add_filter('the_title', "alfa_highlighiting_search_result");
 add_filter('the_excerpt', "alfa_highlighiting_search_result");
 add_filter('the_content', "alfa_highlighiting_search_result");
+
+
+
+
+// Hidding some posts from blog page Not from Dashboard
+
+function alfa_post_hidding_from_blog_page_Not_from_admin_page($main_post_query){
+    // if we Don't do this check then this hook will remove all post based on condition from blog page and admin page also, this check just remove from blog page not from admin
+    if(is_home() && $main_post_query->is_main_query( )){
+        $main_post_query->set('tag__not_in', array(2));
+    }
+}
+
+
+add_action('pre_get_posts', 'alfa_post_hidding_from_blog_page_Not_from_admin_page');
